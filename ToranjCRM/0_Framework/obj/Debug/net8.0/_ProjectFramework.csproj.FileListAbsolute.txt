@@ -1,0 +1,13 @@
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\0_Framework\bin\Debug\net8.0\_ProjectFramework.deps.json
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\0_Framework\bin\Debug\net8.0\_ProjectFramework.dll
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\0_Framework\bin\Debug\net8.0\_ProjectFramework.pdb
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\0_Framework\obj\Debug\net8.0\_ProjectFramework.csproj.AssemblyReference.cache
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\0_Framework\obj\Debug\net8.0\_ProjectFramework.GeneratedMSBuildEditorConfig.editorconfig
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\0_Framework\obj\Debug\net8.0\_ProjectFramework.AssemblyInfoInputs.cache
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\0_Framework\obj\Debug\net8.0\_ProjectFramework.AssemblyInfo.cs
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\0_Framework\obj\Debug\net8.0\_ProjectFramework.csproj.CoreCompileInputs.cache
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\0_Framework\obj\Debug\net8.0\_ProjectFramework.sourcelink.json
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\0_Framework\obj\Debug\net8.0\_ProjectFramework.dll
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\0_Framework\obj\Debug\net8.0\refint\_ProjectFramework.dll
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\0_Framework\obj\Debug\net8.0\_ProjectFramework.pdb
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\0_Framework\obj\Debug\net8.0\ref\_ProjectFramework.dll
