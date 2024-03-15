@@ -13,9 +13,6 @@ namespace ShopManagement.Application.Contracts.ProductCategory
         public string? Picture { get; set; }
 
         [Required(ErrorMessage = ValidationMessage.IsRequired)]
-        public string Keywords { get; set; }    //
-
-        [Required(ErrorMessage = ValidationMessage.IsRequired)]
         public string Slug { get; set; }    //
     }
 }
