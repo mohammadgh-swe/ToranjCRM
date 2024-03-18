@@ -1,4 +1,5 @@
-﻿using ProjectFramework.Domain;
+﻿using ProjectFramework.Application;
+using ProjectFramework.Domain;
 using ShopManagement.Application.Contracts.ProductCategory;
 
 namespace ShopManagement.Domain.ProductCategoryAgg

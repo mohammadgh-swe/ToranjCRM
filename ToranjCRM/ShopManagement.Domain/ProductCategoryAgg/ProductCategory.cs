@@ -35,5 +35,16 @@ namespace ShopManagement.Domain.ProductCategoryAgg
             UpdatedBy = " ";
         }
 
+        public void Delete()
+        {
+            IsDeleted = true;
+        }
+
+
+        public void Restore()
+        {
+            IsDeleted = false;
+        }
+
     }
 }

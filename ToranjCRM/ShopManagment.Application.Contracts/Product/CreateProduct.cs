@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using ProjectFramework.Application;
+using ShopManagement.Application.Contracts.Company;
 using ShopManagement.Application.Contracts.ProductCategory;
 
 namespace ShopManagement.Application.Contracts.Product
@@ -22,5 +23,9 @@ namespace ShopManagement.Application.Contracts.Product
         [Range(1,100000, ErrorMessage = ValidationMessage.IsRequired)]
         public long CategoryId { get; set; }
         public List<ProductCategoryViewModel> Categories { get; set; }
+
+        [Range(1, long.MaxValue, ErrorMessage = ValidationMessage.IsRequired)]
+        public long CompanyId { get; set; }
+        public List<CompanyViewModel> Companies{ get; set; }
     }
 }

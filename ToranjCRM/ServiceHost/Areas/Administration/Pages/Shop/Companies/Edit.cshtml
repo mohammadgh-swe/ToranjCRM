@@ -1,0 +1,83 @@
+﻿@model ShopManagement.Application.Contracts.Company.EditCompany
+@{
+}
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title">ویرایش مدرسه @Model.Name</h4>
+</div>
+
+<form asp-page="./Index" asp-page-handler="Edit"
+      method="post"
+      data-ajax="true"
+      data-callback=""
+      data-action="Refresh"
+      enctype="multipart/form-data">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">نام</label>
+                    <input type="text" class="form-control" asp-for="Name" onchange="makeSlug('Name', 'Slug')">
+                    <span asp-validation-for="Name" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Slug" class="control-label">اسلاگ</label>
+                    <input type="text" class="form-control" asp-for="Slug">
+                    <span asp-validation-for="Slug" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="control-label">شماره تلفن</label>
+                    <input type="text" class="form-control" asp-for="PhoneNumber">
+                    <span asp-validation-for="PhoneNumber" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="AgentName" class="control-label">نام رابط</label>
+                    <input type="text" class="form-control" asp-for="AgentName">
+                    <span asp-validation-for="AgentName" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="AgentPhoneNubmber" class="control-label">شماره تلفن رابط</label>
+                    <input type="text" class="form-control" asp-for="AgentPhoneNubmber">
+                    <span asp-validation-for="AgentPhoneNubmber" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group no-margin">
+                    <label asp-for="Address" class="control-label">آدرس</label>
+                    <textarea class="form-control autogrow" asp-for="Address" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 50px;"></textarea>
+                    <span asp-validation-for="Address" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group no-margin">
+                    <label asp-for="Description" class="control-label">توضیحات</label>
+                    <textarea class="form-control autogrow" asp-for="Description" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
+                    <span asp-validation-for="Description" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" asp-for="Id" value="@Model.Id"/>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+        <button type="submit" class="btn btn-info waves-effect waves-light">ویرایش</button>
+    </div>
+</form>

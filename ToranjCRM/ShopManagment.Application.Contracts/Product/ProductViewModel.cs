@@ -14,4 +14,6 @@ public class ProductViewModel
     public string UpdateAt { get; set; }
     public string Category { get; set; }
     public long CategoryId { get; set; }
+    public string Company { get; set; }
+    public long CompanyId{ get; set; }
 }

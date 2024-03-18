@@ -41,34 +41,43 @@
         </div>
         
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label asp-for="Code" class="control-label">کد محصول</label>
                     <input type="text" class="form-control" asp-for="Code" >
                     <span asp-validation-for="Code" class="error"></span>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label asp-for="UnitPrice" class="control-label">قیمت واحد</label>
                     <input type="number" class="form-control" asp-for="UnitPrice">
                     <span asp-validation-for="UnitPrice" class="error"></span>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label asp-for="ProductCount" class="control-label">تعداد</label>
                     <input type="number" class="form-control" asp-for="ProductCount">
                     <span asp-validation-for="ProductCount" class="error"></span>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label asp-for="Size" class="control-label">سایز</label>
                     <input type="text" class="form-control" asp-for="Size" >
                     <span asp-validation-for="Size" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="CompanyId" class="control-label">مدرسه</label>
+                    <select class="form-control" asp-for="CompanyId" asp-items='new SelectList(Model.Companies, "Id", "Name")'>
+                        <option value="0">مدرسه ...</option>
+                    </select>
+                    <span asp-validation-for="CompanyId" class="error"></span>
                 </div>
             </div>
             <div class="col-md-6">

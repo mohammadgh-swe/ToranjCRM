@@ -25,7 +25,7 @@ public class ProductApplication : IProductApplication
 
         var product = new Product(command.Name, command.Code, command.ShortDescription,
             command.Description, command.Size, command.Picture, command.UnitPrice,
-            command.ProductCount, slug, command.CategoryId);
+            command.ProductCount, slug, command.CategoryId, command.CompanyId);
         _productRepository.Create(product);
         _productRepository.SaveChanges();
         return operation.Succeed();
@@ -44,7 +44,7 @@ public class ProductApplication : IProductApplication
 
         product.Edit(command.Name, command.Code, command.ShortDescription,
             command.Description, command.Size, command.Picture, command.UnitPrice,
-            command.ProductCount, slug, command.CategoryId);
+            command.ProductCount, slug, command.CategoryId, command.CompanyId);
         _productRepository.SaveChanges();
         return operation.Succeed();
     }

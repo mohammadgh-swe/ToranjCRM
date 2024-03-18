@@ -1,6 +1,7 @@
 ﻿using ProjectFramework.Domain;
 using ShopManagement.Domain.CompanyAgg;
 using ShopManagement.Domain.ProductCategoryAgg;
+using System.ComponentModel.Design;
 
 namespace ShopManagement.Domain.ProductAgg
 {
@@ -25,7 +26,7 @@ namespace ShopManagement.Domain.ProductAgg
 
         public Product(string name, string code, string shortDescription,
             string description, string size, string picture, double unitPrice,
-            int productCount, string slug, long categoryId)
+            int productCount, string slug, long categoryId, long companyId)
         {
             Name = name;
             Code = code;
@@ -38,11 +39,12 @@ namespace ShopManagement.Domain.ProductAgg
             Slug = slug;
             CategoryId = categoryId;
             IsInStock = true;
+            CompanyId = companyId;
         }
 
         public void Edit(string name, string code, string shortDescription,
             string description, string size, string picture, double unitPrice,
-            int productCount, string slug, long categoryId)
+            int productCount, string slug, long categoryId, long companyId)
         {
             Name = name;
             Code = code;
@@ -54,6 +56,7 @@ namespace ShopManagement.Domain.ProductAgg
             ProductCount = productCount;
             Slug = slug;
             CategoryId = categoryId;
+            CompanyId = companyId;
 
             UpdateAt = DateTime.Now;
             UpdatedBy = " ";

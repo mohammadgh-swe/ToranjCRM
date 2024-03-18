@@ -29,7 +29,9 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 UnitPrice = x.UnitPrice,
                 ProductCount = x.ProductCount,
                 Slug = x.Slug,
-                CategoryId = x.CategoryId
+                CategoryId = x.CategoryId,
+                CompanyId = x.CompanyId
+                
             }).FirstOrDefault(x => x.Id == id);
         }
 
@@ -49,8 +51,9 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 CreationDate = x.CreateAt.ToString(),
                 UpdateAt = x.UpdateAt.ToString(),
                 Category = x.Category.Name,
-                CategoryId = x.CategoryId
-                
+                CategoryId = x.CategoryId,
+                Company = x.Company.Name,
+                CompanyId = x.CompanyId
             });
 
             if (!string.IsNullOrWhiteSpace(searchModel.Name))
@@ -62,8 +65,10 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             if (searchModel.CategoryId != 0)
                 query = query.Where(x => x.CategoryId == searchModel.CategoryId);
 
+            if (searchModel.CompanyId != 0)
+                query = query.Where(x => x.CompanyId == searchModel.CompanyId);
 
-                return query.OrderByDescending(x => x.Id).ToList();
+            return query.OrderByDescending(x => x.Id).ToList();
         }
     }
 }

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using ShopManagement.Application.Contracts.Company;
 using ShopManagement.Application.Contracts.Product;
 using ShopManagement.Application.Contracts.ProductCategory;
 
@@ -13,19 +14,23 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Products
         public ProductSearchModel SearchModel;
         public List<ProductViewModel> Products;
         public SelectList ProductCategories;
+        public SelectList Companies;
 
         private readonly IProductApplication _productApplication;
         private readonly IProductCategoryApplication _productCategoryApplication;
+        private readonly ICompanyApplication _companyApplication;
 
-        public IndexModel(IProductApplication productApplication, IProductCategoryApplication productCategoryApplication)
+        public IndexModel(IProductApplication productApplication, IProductCategoryApplication productCategoryApplication, ICompanyApplication companyApplication)
         {
             _productApplication = productApplication;
             _productCategoryApplication = productCategoryApplication;
+            _companyApplication = companyApplication;
         }
 
 
         public void OnGet(ProductSearchModel searchModel)
         {
+            Companies = new SelectList(_companyApplication.GetCompanies(), "Id", "Name");
             ProductCategories = new SelectList(_productCategoryApplication.GetProductCategories(), "Id", "Name");
             Products = _productApplication.Search(searchModel);
         }
@@ -34,7 +39,8 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Products
         {
             var command = new CreateProduct()
             {
-                Categories = _productCategoryApplication.GetProductCategories()
+                Categories = _productCategoryApplication.GetProductCategories(),
+                Companies = _companyApplication.GetCompanies(),
             };
             return Partial("./Create", command);
         }
@@ -49,6 +55,8 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Products
         {
             var product = _productApplication.GetDetails(id);
             product.Categories = _productCategoryApplication.GetProductCategories();
+            product.Companies = _companyApplication.GetCompanies();
+
             return Partial("./Edit", product);
         }
 
