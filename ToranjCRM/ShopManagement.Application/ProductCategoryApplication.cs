@@ -1,4 +1,5 @@
 ﻿using ProjectFramework.Application;
+using ShopManagement.Application.Contracts.Product;
 using ShopManagement.Application.Contracts.ProductCategory;
 using ShopManagement.Domain.ProductCategoryAgg;
 
@@ -18,7 +19,7 @@ namespace ShopManagement.Application
         {
             var operation = new OperationResult();
             if (_productCategoryRepository.Exists(x => x.Name == command.Name))
-                return operation.Failed("امکان ثبت رکورد تکراری نیست، لطفا مجددا تلاش کنید.");
+                return operation.Failed(ApplicationMessage.DuplicatedRecord);
 
             var slug = command.Slug.Slugify();
 
@@ -35,10 +36,10 @@ namespace ShopManagement.Application
             var operation = new OperationResult();
             var productCategory = _productCategoryRepository.Get(command.Id);
             if (productCategory == null)
-                operation.Failed("رکوردی با اطلاعات درخواست شده، موجود نیست. لطفا مجددا تلاش کنید.");
+                operation.Failed(ApplicationMessage.RecordNotFound);
 
             if (_productCategoryRepository.Exists(x => x.Name == command.Name && x.Id != command.Id))
-                operation.Failed("امکان ثبت رکورد تکراری نیست، لطفا مجددا تلاش کنید.");
+                operation.Failed(ApplicationMessage.DuplicatedRecord);
 
 
             var slug = command.Slug.Slugify();
@@ -59,6 +60,11 @@ namespace ShopManagement.Application
         public List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel)
         {
             return _productCategoryRepository.Search(searchModel);
+        }
+
+        public List<ProductCategoryViewModel> GetProductCategories()
+        {
+            return _productCategoryRepository.GetProductCategories();
         }
     }
 }

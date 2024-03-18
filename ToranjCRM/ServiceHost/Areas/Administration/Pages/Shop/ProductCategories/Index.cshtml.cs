@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ShopManagement.Application.Contracts.Product;
 using ShopManagement.Application.Contracts.ProductCategory;
 
 namespace ServiceHost.Areas.Administration.Pages.Shop.ProductCategories
@@ -15,6 +16,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductCategories
         {
             _productCategoryApplication = productCategoryApplication;
         }
+
 
         public void OnGet(ProductCategorySearchModel searchModel)
         {

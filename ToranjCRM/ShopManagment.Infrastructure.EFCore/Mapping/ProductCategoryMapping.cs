@@ -16,7 +16,9 @@ namespace ShopManagement.Infrastructure.EFCore.Mapping
             builder.Property(x => x.Picture).HasMaxLength(1000).IsRequired(false);
             builder.Property(x => x.Slug).HasMaxLength(300).IsRequired();
 
-
+            builder.HasMany(x => x.Products)
+                .WithOne(x => x.Category)
+                .HasForeignKey(x => x.CategoryId);
         }
     }
 }

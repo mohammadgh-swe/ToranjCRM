@@ -14,6 +14,7 @@
         {
             CreateAt = DateTime.Now;
             CreatedBy = " ";
+            UpdateAt = CreateAt;
             UpdatedBy = " ";
             IsDeleted = false;
         }
