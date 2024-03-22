@@ -1,5 +1,4 @@
-﻿using ProjectFramework.Application;
-using ProjectFramework.Domain;
+﻿using ProjectFramework.Domain;
 using ShopManagement.Application.Contracts.Company;
 
 namespace ShopManagement.Domain.CompanyAgg

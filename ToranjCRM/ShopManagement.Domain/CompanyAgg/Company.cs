@@ -1,7 +1,6 @@
-﻿using ProjectFramework.Application;
-using ProjectFramework.Domain;
+﻿using ProjectFramework.Domain;
 using ShopManagement.Domain.ProductAgg;
-using System.ComponentModel.DataAnnotations;
+using ShopManagement.Domain.CustomerAgg;
 
 namespace ShopManagement.Domain.CompanyAgg
 {
@@ -16,10 +15,12 @@ namespace ShopManagement.Domain.CompanyAgg
         public string Slug { get; private set; }
 
         public List<Product> Products { get; private set; }
+        public List<Customer> Customers { get; set; }
 
         public Company()
         {
             Products = new List<Product>();
+            Customers = new List<Customer>();
         }
         public Company(string name, string address, string agentName, string agentPhoneNubmber, string phoneNumber, string description, string slug)
         {
