@@ -26,5 +26,9 @@ public class ProductMapping : IEntityTypeConfiguration<Product>
         builder.HasOne(x => x.Company)
             .WithMany(x => x.Products)
             .HasForeignKey(x => x.CompanyId);
+
+        builder.HasMany(x => x.ProductPictures)
+            .WithOne(x => x.Product)
+            .HasForeignKey(x => x.ProductId);
     }
 }

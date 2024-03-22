@@ -6,9 +6,8 @@ namespace ProjectFramework.Domain
     {
         T Get(TKey id);
         List<T> Get();
-        void Create (T entity);
+        void Create(T entity);
         void SaveChanges();
         bool Exists(Expression<Func<T, bool>> expression);
-
     }
 }

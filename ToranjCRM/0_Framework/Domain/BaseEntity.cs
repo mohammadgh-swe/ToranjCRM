@@ -18,5 +18,15 @@
             UpdatedBy = " ";
             IsDeleted = false;
         }
+
+        public void Delete()
+        {
+            IsDeleted = true;
+        }
+
+        public void Restore()
+        {
+            IsDeleted = false;
+        }
     }
 }

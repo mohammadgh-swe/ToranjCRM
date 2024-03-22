@@ -2,6 +2,7 @@
 using ShopManagement.Domain.CompanyAgg;
 using ShopManagement.Domain.ProductCategoryAgg;
 using System.ComponentModel.Design;
+using ShopManagement.Domain.ProductPictureAgg;
 
 namespace ShopManagement.Domain.ProductAgg
 {
@@ -24,6 +25,8 @@ namespace ShopManagement.Domain.ProductAgg
         public long CompanyId { get; private set; }
         public Company Company { get; set; }
 
+        public List<ProductPicture> ProductPictures { get; private set; }
+
         public Product(string name, string code, string shortDescription,
             string description, string size, string picture, double unitPrice,
             int productCount, string slug, long categoryId, long companyId)
@@ -37,8 +40,8 @@ namespace ShopManagement.Domain.ProductAgg
             UnitPrice = unitPrice;
             ProductCount = productCount;
             Slug = slug;
-            CategoryId = categoryId;
             IsInStock = true;
+            CategoryId = categoryId;
             CompanyId = companyId;
         }
 
