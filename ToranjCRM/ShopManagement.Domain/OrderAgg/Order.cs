@@ -14,7 +14,11 @@ namespace ShopManagement.Domain.OrderAgg
         public double TotalPrice { get; private set; }
         public double FinallyPrice { get; private set; }
         public string Description { get; set; }
-        public long OperatorId { get; private set; }
         public bool Finally { get; private set; }
+
+        //public long CustomerId { get; set; }
+        //public long CompanyId { get; set; }
+
+        //public List<OrderDetail> OrderDetail { get; set; }
     }
 }

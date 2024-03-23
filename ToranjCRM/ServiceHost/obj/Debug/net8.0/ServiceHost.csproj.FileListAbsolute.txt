@@ -273,3 +273,13 @@ D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ServiceHost\obj\Debug\net8.0
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ServiceHost\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ServiceHost\bin\Debug\net8.0\ProjectFramework.dll
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ServiceHost\bin\Debug\net8.0\ProjectFramework.pdb
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ServiceHost\bin\Debug\net8.0\InventoryManagement.Application.Contract.dll
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ServiceHost\bin\Debug\net8.0\InventoryManagement.Domain.dll
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ServiceHost\bin\Debug\net8.0\InventoryManagement.Infrastructure.Configuration.dll
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ServiceHost\bin\Debug\net8.0\InventoryManagement.Infrastructure.EfCore.dll
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ServiceHost\bin\Debug\net8.0\InventoryManagement.Infrastructure.Configuration.pdb
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ServiceHost\bin\Debug\net8.0\InventoryManagement.Application.Contract.pdb
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ServiceHost\bin\Debug\net8.0\InventoryManagement.Domain.pdb
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ServiceHost\bin\Debug\net8.0\InventoryManagement.Infrastructure.EfCore.pdb
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ServiceHost\bin\Debug\net8.0\InventoryManagement.Application.dll
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ServiceHost\bin\Debug\net8.0\InventoryManagement.Application.pdb
