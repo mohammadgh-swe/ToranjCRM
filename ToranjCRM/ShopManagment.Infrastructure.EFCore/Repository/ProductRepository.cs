@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProjectFramework.Application;
 using ProjectFramework.Infrastructure;
 using ShopManagement.Application.Contracts.Product;
 using ShopManagement.Domain.ProductAgg;
@@ -26,13 +27,21 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 ShortDescription = x.ShortDescription,
                 Description = x.Description,
                 Size = x.Size,
-                UnitPrice = x.UnitPrice,
-                ProductCount = x.ProductCount,
                 Slug = x.Slug,
                 CategoryId = x.CategoryId,
                 CompanyId = x.CompanyId
-                
+
             }).FirstOrDefault(x => x.Id == id);
+        }
+
+        public List<ProductViewModel> GetProducts()
+        {
+            return _context.Products.Select(x => new ProductViewModel
+            {
+                Id = x.Id,
+                Name = x.Name,
+                NameCompanyCode = x.Name + " - " + x.Company.Name + " - " + x.Code,
+            }).ToList();
         }
 
         public List<ProductViewModel> Search(ProductSearchModel searchModel)
@@ -45,11 +54,8 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 Picture = x.Picture,
                 Code = x.Code,
                 Size = x.Size,
-                UnitPrice = x.UnitPrice,
-                ProductCount = x.ProductCount,
-                IsInStock = x.IsInStock,
-                CreationDate = x.CreateAt.ToString(),
-                UpdateAt = x.UpdateAt.ToString(),
+                CreationDate = x.CreateAt.ToFarsi(),
+                UpdateAt = x.UpdateAt.ToFarsi(),
                 Category = x.Category.Name,
                 CategoryId = x.CategoryId,
                 Company = x.Company.Name,

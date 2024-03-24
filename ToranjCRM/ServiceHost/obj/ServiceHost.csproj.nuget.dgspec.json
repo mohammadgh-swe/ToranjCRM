@@ -99,6 +99,9 @@
             "projectReferences": {
               "D:\\++Programing++\\C#\\0-Projects\\ToranjCRM\\ToranjCRM\\0_Framework\\ProjectFramework.csproj": {
                 "projectPath": "D:\\++Programing++\\C#\\0-Projects\\ToranjCRM\\ToranjCRM\\0_Framework\\ProjectFramework.csproj"
+              },
+              "D:\\++Programing++\\C#\\0-Projects\\ToranjCRM\\ToranjCRM\\ShopManagment.Application.Contracts\\ShopManagement.Application.Contracts.csproj": {
+                "projectPath": "D:\\++Programing++\\C#\\0-Projects\\ToranjCRM\\ToranjCRM\\ShopManagment.Application.Contracts\\ShopManagement.Application.Contracts.csproj"
               }
             }
           }

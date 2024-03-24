@@ -24,8 +24,7 @@ public class ProductApplication : IProductApplication
         var slug = command.Slug.Slugify();
 
         var product = new Product(command.Name, command.Code, command.ShortDescription,
-            command.Description, command.Size, command.Picture, command.UnitPrice,
-            command.ProductCount, slug, command.CategoryId, command.CompanyId);
+            command.Description, command.Size, command.Picture, slug, command.CategoryId, command.CompanyId);
         _productRepository.Create(product);
         _productRepository.SaveChanges();
         return operation.Succeed();
@@ -43,32 +42,7 @@ public class ProductApplication : IProductApplication
         var slug = command.Slug.Slugify();
 
         product.Edit(command.Name, command.Code, command.ShortDescription,
-            command.Description, command.Size, command.Picture, command.UnitPrice,
-            command.ProductCount, slug, command.CategoryId, command.CompanyId);
-        _productRepository.SaveChanges();
-        return operation.Succeed();
-    }
-
-    public OperationResult InStock(long id)
-    {
-        var operation = new OperationResult();
-        var product = _productRepository.Get(id);
-        if (product == null)
-            return operation.Failed(ApplicationMessage.RecordNotFound);
-            
-        product.InStock();
-        _productRepository.SaveChanges();
-        return operation.Succeed();
-    }
-
-    public OperationResult NotInStock(long id)
-    {
-        var operation = new OperationResult();
-        var product = _productRepository.Get(id);
-        if (product == null)
-            return operation.Failed(ApplicationMessage.RecordNotFound);
-
-        product.NotInStock();
+            command.Description, command.Size, command.Picture, slug, command.CategoryId, command.CompanyId);
         _productRepository.SaveChanges();
         return operation.Succeed();
     }
@@ -76,6 +50,11 @@ public class ProductApplication : IProductApplication
     public EditProduct GetDetails(long id)
     {
         return _productRepository.GetDetails(id);
+    }
+
+    public List<ProductViewModel> GetProducts()
+    {
+        return _productRepository.GetProducts();
     }
 
     public List<ProductViewModel> Search(ProductSearchModel searchModel)

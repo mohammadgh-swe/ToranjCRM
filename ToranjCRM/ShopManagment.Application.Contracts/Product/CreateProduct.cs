@@ -14,10 +14,8 @@ namespace ShopManagement.Application.Contracts.Product
         public string? Description { get; set; }
         public string? Size { get; set; }
         public string? Picture { get; set; }
-        [Range(0, double.MaxValue, ErrorMessage = ValidationMessage.IsRequired)]
-        public double UnitPrice { get; set; }
-        [Range(0, long.MaxValue, ErrorMessage = ValidationMessage.IsRequired)]
-        public int ProductCount { get; set; }
+        //[Range(0, double.MaxValue, ErrorMessage = ValidationMessage.IsRequired)]
+        //public double UnitPrice { get; set; }
         [Required(ErrorMessage = ValidationMessage.IsRequired)]
         public string Slug { get; set; }
         [Range(1,100000, ErrorMessage = ValidationMessage.IsRequired)]

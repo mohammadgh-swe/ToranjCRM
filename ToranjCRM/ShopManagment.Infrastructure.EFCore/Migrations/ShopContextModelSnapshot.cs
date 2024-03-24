@@ -83,6 +83,57 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                     b.ToTable("Companies", (string)null);
                 });
 
+            modelBuilder.Entity("ShopManagement.Domain.CustomerAgg.Customer", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("CompanyId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Firstname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Lastname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NationalCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
+
+                    b.ToTable("Customers");
+                });
+
             modelBuilder.Entity("ShopManagement.Domain.ProductAgg.Product", b =>
                 {
                     b.Property<long>("Id")
@@ -115,9 +166,6 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsInStock")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -126,9 +174,6 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                     b.Property<string>("Picture")
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
-
-                    b.Property<int>("ProductCount")
-                        .HasColumnType("int");
 
                     b.Property<string>("ShortDescription")
                         .HasMaxLength(500)
@@ -142,9 +187,6 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
-
-                    b.Property<double>("UnitPrice")
-                        .HasColumnType("float");
 
                     b.Property<DateTime>("UpdateAt")
                         .HasColumnType("datetime2");
@@ -210,6 +252,62 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                     b.ToTable("ProductCategories", (string)null);
                 });
 
+            modelBuilder.Entity("ShopManagement.Domain.ProductPictureAgg.ProductPicture", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Picture")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<string>("PictureTitle")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("UpdateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductPictures", (string)null);
+                });
+
+            modelBuilder.Entity("ShopManagement.Domain.CustomerAgg.Customer", b =>
+                {
+                    b.HasOne("ShopManagement.Domain.CompanyAgg.Company", "Company")
+                        .WithMany("Customers")
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Company");
+                });
+
             modelBuilder.Entity("ShopManagement.Domain.ProductAgg.Product", b =>
                 {
                     b.HasOne("ShopManagement.Domain.ProductCategoryAgg.ProductCategory", "Category")
@@ -229,9 +327,27 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                     b.Navigation("Company");
                 });
 
+            modelBuilder.Entity("ShopManagement.Domain.ProductPictureAgg.ProductPicture", b =>
+                {
+                    b.HasOne("ShopManagement.Domain.ProductAgg.Product", "Product")
+                        .WithMany("ProductPictures")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("ShopManagement.Domain.CompanyAgg.Company", b =>
                 {
+                    b.Navigation("Customers");
+
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("ShopManagement.Domain.ProductAgg.Product", b =>
+                {
+                    b.Navigation("ProductPictures");
                 });
 
             modelBuilder.Entity("ShopManagement.Domain.ProductCategoryAgg.ProductCategory", b =>

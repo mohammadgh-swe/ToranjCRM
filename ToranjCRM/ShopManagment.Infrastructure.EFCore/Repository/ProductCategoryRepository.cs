@@ -1,4 +1,5 @@
-﻿using ProjectFramework.Infrastructure;
+﻿using ProjectFramework.Application;
+using ProjectFramework.Infrastructure;
 using ShopManagement.Application.Contracts.ProductCategory;
 using ShopManagement.Domain.ProductCategoryAgg;
 
@@ -42,8 +43,8 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 Id = x.Id,
                 Name = x.Name,
                 Picture = x.Picture,
-                CreationDate = x.CreateAt.ToString(),
-                UpdateAt = x.UpdateAt.ToString()
+                CreationDate = x.CreateAt.ToFarsi(),
+                UpdateAt = x.UpdateAt.ToFarsi()
             });
 
             if (!string.IsNullOrWhiteSpace(searchModel.Name))

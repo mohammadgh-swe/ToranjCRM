@@ -64,15 +64,11 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>عکس</th>
                                 <th>نام</th>
                                 <th>کد</th>
                                 <th>سایز</th>
-                                <th>قیمت واحد</th>
-                                <th>تعداد</th>
-                                <th>موجودی</th>
+                                <th>مدرسه</th>
                                 <th>گروه محصولات</th>
-                                <th>تاریخ تولید</th>
                                 <th>تاریخ ویرایش</th>
                                 <th>عملیات</th>
                             </tr>
@@ -82,46 +78,18 @@
                             {
                                 <tr>
                                     <td>@item.Id</td>
-                                    <td>
-                                        <img src="@item.Picture" style="width: 70px; height: 70px"/>
-                                    </td>
                                     <td>@item.Name</td>
                                     <td>@item.Code</td>
                                     <td>@item.Size</td>
-                                    <td>@item.UnitPrice</td>
-                                    <td>@item.ProductCount</td>
-                                    <td class="text-center">
-                                    @if (item.IsInStock == true)
-                                    {
-                                        <i class="fa fa-check fa-2x text-success"></i>
-                                    }
-                                    else
-                                    {
-                                        <i class="fa fa-remove fa-2x text-danger"></i>
-                                    }
-                                    </td>
-
+                                    <td>@item.Company</td>
                                     <td>@item.Category</td>
-                                    <td>@item.CreationDate</td>
                                     <td>@item.UpdateAt </td>
                                     <td>
                                         <a class="btn btn-warning btn-rounded waves-effect waves-light m-b-5"
                                            href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id })">
                                             <i class="fa fa-edit"></i> ویرایش
                                         </a>
-                                        @if (item.IsInStock)
-                                        {
-                                        <a class="btn btn-danger btn-rounded waves-effect waves-light m-b-5" asp-page="./Index" asp-page-handler="NotInStock" asp-route-id="@item.Id">
-                                            <i class="fa fa-empty"></i> اتمام موجودی
-                                        </a>
-                                        }
-                                        else
-                                        {
-                                            <a class="btn btn-success btn-rounded waves-effect waves-light m-b-5" asp-page="./Index" asp-page-handler="IsInStock" asp-route-id="@item.Id">
-                                                <i class="fa fa-empty"></i> موجود شد  
-                                            </a>
-                                        }
-                                        </td>
+                                    </td>
                                 </tr>
                             }
                             </tbody>
