@@ -11,9 +11,6 @@
 <div class="row">
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
-        <p class="pull-left">
-            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد انبار جدید</a>
-        </p>
     </div>
 </div>
 
@@ -26,9 +23,23 @@
             <div class="panel-body">
                 <form class="form-inline" role="form" method="get">
                     <div class="form-group">
-                        <label class="sr-only" asp-for="SearchModel.ProductId"></label>
-                        <select class="form-control" asp-for="SearchModel.ProductId" asp-items="Model.Products">
-                            <option value="0">انتخاب محصول ...</option>
+                        <label class="sr-only" asp-for="@Model.SearchModel.ProductName"></label>
+                        <input class="form-control" asp-for="@Model.SearchModel.ProductName" placeholder="نام  محصول">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="@Model.SearchModel.ProductCode"></label>
+                        <input class="form-control" asp-for="@Model.SearchModel.ProductCode" placeholder="کد محصول">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="@Model.SearchModel.CategoryId"></label>
+                        <select class="form-control" asp-for="@Model.SearchModel.CategoryId" asp-items="Model.ProductCategories">
+                            <option value="0">گروه محصولی ...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="@Model.SearchModel.CompanyId"></label>
+                        <select class="form-control" asp-for="@Model.SearchModel.CompanyId" asp-items="Model.Companies">
+                            <option value="0"> مدرسه ...</option>
                         </select>
                     </div>
                     <div class="form-group m-r-10">
@@ -39,6 +50,7 @@
                             </label>
                         </div>
                     </div>
+
                     <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">جستجو</button>
                     <a class="btn btn-primary waves-effect waves-light m-l-10" asp-page="./Index">مشاهده همه</a>
                 </form>
@@ -46,6 +58,7 @@
         </div>
     </div>
 </div>
+
 
 <div class="row" id="ProductCategoriesDiv">
     <div class="col-md-12">
@@ -61,7 +74,9 @@
                                 <tr>
                                     <th>#</th>
                                     <th>محصول</th>
-                                    <th>قیمت</th>
+                                    <th>کد محصول</th>
+                                    <th>مدرسه</th>
+                                    <th> دسته بندی محصول</th>
                                     <th>موجودی انبار</th>
                                     <th>تاریخ ایجاد</th>
                                     <th>عملیات</th>
@@ -73,20 +88,20 @@
                                     <tr>
                                         <td>@item.Id</td>
                                         <td>@item.Product</td>
-                                        <td>@item.UnitPrice</td>
+                                        <td>@item.ProductCode</td>
+                                        <td>@item.Company</td>
+                                        <td>@item.Category</td>
                                         <td>@item.CurrentCount</td>
                                         <td>@item.CreationDate</td>
                                         <td>
-                                            <a class="btn btn-warning waves-effect waves-light m-b-5"
-                                               href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
-                                                <i class="fa fa-edit"></i> ویرایش
-                                            </a>
                                             <a class="btn btn-success waves-effect waves-light m-b-5"
-                                               href="#showmodal=@Url.Page("./Index", "Increase", new { id = item.Id})">
+                                               href="#showmodal=@Url.Page("./Index", "Increase", new { id = item.Id})"
+                                               onclick="$('.modal-dialog').css('width', '600px')">
                                                 <i class="fa fa-plus"></i> افزایش موجودی
                                             </a>
                                             <a class="btn btn-danger waves-effect waves-light m-b-5"
-                                               href="#showmodal=@Url.Page("./Index", "Decrease", new { id = item.Id})">
+                                               href="#showmodal=@Url.Page("./Index", "Decrease", new { id = item.Id})"
+                                               onclick="$('.modal-dialog').css('width', '600px')">
                                                 <i class="fa fa-minus"></i> کاهش موجودی
                                             </a>
                                             <a class="btn btn-primary waves-effect waves-light m-b-5"

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using ShopManagement.Domain.InventoryAgg;
 using ShopManagement.Domain.ProductAgg;
 
 namespace ShopManagement.Infrastructure.EFCore.Mapping;
@@ -30,5 +31,9 @@ public class ProductMapping : IEntityTypeConfiguration<Product>
         builder.HasMany(x => x.ProductPictures)
             .WithOne(x => x.Product)
             .HasForeignKey(x => x.ProductId);
+
+        builder.HasOne(x => x.Inventory)
+            .WithOne(x => x.Product)
+            .HasForeignKey<Inventory>(x => x.ProductId);
     }
 }

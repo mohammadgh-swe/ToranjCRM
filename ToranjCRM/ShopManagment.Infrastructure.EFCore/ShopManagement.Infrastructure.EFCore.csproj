@@ -22,4 +22,5 @@
     <ProjectReference Include="..\ShopManagement.Domain\ShopManagement.Domain.csproj" />
   </ItemGroup>
 
+
 </Project>

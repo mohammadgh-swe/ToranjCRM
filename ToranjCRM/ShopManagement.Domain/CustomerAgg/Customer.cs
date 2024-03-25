@@ -1,36 +1,40 @@
 ﻿using ProjectFramework.Domain;
 using ShopManagement.Domain.CompanyAgg;
+using ShopManagement.Domain.OrderAgg;
 
 namespace ShopManagement.Domain.CustomerAgg
 {
     public class Customer : BaseEntity
     {
-        public string Firstname{ get; private set; }
-        public string Lastname { get; private set; }
+        public string Name { get; private set; }
         public string PhoneNumber { get; private set; }
         public string NationalCode { get; private set; }
 
         public long CompanyId { get; private set; }
         public Company Company { get; private set; }
 
-        public Customer(string firstname, string lastname, string phoneNumber, string nationalCode, long companyId)
+        public List<Order> Orders { get; set; }
+
+        public Customer()
         {
-            Firstname = firstname;
-            Lastname = lastname;
+            Orders = new List<Order>();
+        }
+
+        public Customer(string name, string phoneNumber, long companyId, string nationalCode = null)
+        {
+            Name = name;
             PhoneNumber = phoneNumber;
             NationalCode = nationalCode;
             CompanyId = companyId;
         }
 
-        public void Edit(string firstname, string lastname, string phoneNumber, string nationalCode, long companyId)
+        public void Edit(string name, string phoneNumber, string nationalCode, long companyId, string operatorName = " ")
         {
-            Firstname = firstname;
-            Lastname = lastname;
+            Name = name;
             PhoneNumber = phoneNumber;
             NationalCode = nationalCode;
             CompanyId = companyId;
-
-            UpdatedBy = " ";
+            UpdatedBy = operatorName;
             UpdateAt = DateTime.Now;
         }
     }

@@ -1,6 +1,8 @@
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagment.Application.Contracts\bin\Debug\net8.0\ShopManagement.Application.Contracts.deps.json
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagment.Application.Contracts\bin\Debug\net8.0\ShopManagement.Application.Contracts.dll
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagment.Application.Contracts\bin\Debug\net8.0\ShopManagement.Application.Contracts.pdb
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagment.Application.Contracts\bin\Debug\net8.0\ProjectFramework.dll
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagment.Application.Contracts\bin\Debug\net8.0\ProjectFramework.pdb
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagment.Application.Contracts\obj\Debug\net8.0\ShopManagement.Application.Contracts.csproj.AssemblyReference.cache
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagment.Application.Contracts\obj\Debug\net8.0\ShopManagement.Application.Contracts.GeneratedMSBuildEditorConfig.editorconfig
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagment.Application.Contracts\obj\Debug\net8.0\ShopManagement.Application.Contracts.AssemblyInfoInputs.cache
@@ -12,5 +14,3 @@ D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagment.Application.Co
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagment.Application.Contracts\obj\Debug\net8.0\refint\ShopManagement.Application.Contracts.dll
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagment.Application.Contracts\obj\Debug\net8.0\ShopManagement.Application.Contracts.pdb
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagment.Application.Contracts\obj\Debug\net8.0\ref\ShopManagement.Application.Contracts.dll
-D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagment.Application.Contracts\bin\Debug\net8.0\ProjectFramework.dll
-D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagment.Application.Contracts\bin\Debug\net8.0\ProjectFramework.pdb

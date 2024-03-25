@@ -27,6 +27,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 ShortDescription = x.ShortDescription,
                 Description = x.Description,
                 Size = x.Size,
+                UnitPrice = x.UnitPrice,
                 Slug = x.Slug,
                 CategoryId = x.CategoryId,
                 CompanyId = x.CompanyId
@@ -34,16 +35,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             }).FirstOrDefault(x => x.Id == id);
         }
 
-        public List<ProductViewModel> GetProducts()
-        {
-            return _context.Products.Select(x => new ProductViewModel
-            {
-                Id = x.Id,
-                Name = x.Name,
-                NameCompanyCode = x.Name + " - " + x.Company.Name + " - " + x.Code,
-            }).ToList();
-        }
-
+     
         public List<ProductViewModel> Search(ProductSearchModel searchModel)
         {
             var query = _context.Products.Include(x => x.Category).Select(x => new ProductViewModel
@@ -54,6 +46,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 Picture = x.Picture,
                 Code = x.Code,
                 Size = x.Size,
+                UnitPrice = x.UnitPrice,
                 CreationDate = x.CreateAt.ToFarsi(),
                 UpdateAt = x.UpdateAt.ToFarsi(),
                 Category = x.Category.Name,

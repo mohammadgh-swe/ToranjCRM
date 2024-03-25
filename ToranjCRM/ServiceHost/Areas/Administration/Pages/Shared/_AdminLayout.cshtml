@@ -209,6 +209,27 @@
                     </a>
                 </li>
                 <li>
+                    <a asp-page="/Index" class="waves-effect">
+                        <i class="md md-home"></i><span> ایجاد سفارش </span>
+                    </a>
+                </li>
+                <li class="has_sub">
+                    <a class="waves-effect">
+                        <i class="md md-shopping-cart"></i><span>سفارشات</span>
+                        <span class="pull-right">
+                            <i class="md md-add"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a asp-page="/Shop/ProductCategories/Index"> ایجاد سفارش </a>
+                        </li>
+                        <li>
+                            <a asp-page="/Shop/Products/Index">سفارشات</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
                     <a asp-page="/Shop/Companies/Index" class="waves-effect">
                         <i class="md md-school"></i><span> مدرسه ها </span>
                     </a>

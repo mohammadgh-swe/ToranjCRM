@@ -1,8 +1,10 @@
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Application\bin\Debug\net8.0\ShopManagement.Application.deps.json
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Application\bin\Debug\net8.0\ShopManagement.Application.dll
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Application\bin\Debug\net8.0\ShopManagement.Application.pdb
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Application\bin\Debug\net8.0\ProjectFramework.dll
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Application\bin\Debug\net8.0\ShopManagement.Application.Contracts.dll
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Application\bin\Debug\net8.0\ShopManagement.Domain.dll
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Application\bin\Debug\net8.0\ProjectFramework.pdb
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Application\bin\Debug\net8.0\ShopManagement.Domain.pdb
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Application\bin\Debug\net8.0\ShopManagement.Application.Contracts.pdb
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Application\obj\Debug\net8.0\ShopManagement.Application.csproj.AssemblyReference.cache
@@ -16,5 +18,3 @@ D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Application\o
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Application\obj\Debug\net8.0\refint\ShopManagement.Application.dll
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Application\obj\Debug\net8.0\ShopManagement.Application.pdb
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Application\obj\Debug\net8.0\ref\ShopManagement.Application.dll
-D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Application\bin\Debug\net8.0\ProjectFramework.dll
-D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Application\bin\Debug\net8.0\ProjectFramework.pdb

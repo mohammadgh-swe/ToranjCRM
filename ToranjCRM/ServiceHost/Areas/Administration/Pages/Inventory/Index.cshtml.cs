@@ -1,8 +1,10 @@
-using InventoryManagement.Application.Contract.Inventory;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using ShopManagement.Application.Contracts.Company;
+using ShopManagement.Application.Contracts.Inventory;
 using ShopManagement.Application.Contracts.Product;
+using ShopManagement.Application.Contracts.ProductCategory;
 
 namespace ServiceHost.Areas.Administration.Pages.Inventory
 {
@@ -12,49 +14,28 @@ namespace ServiceHost.Areas.Administration.Pages.Inventory
         public string Message { get; set; }
         public InventorySearchModel SearchModel;
         public List<InventoryViewModel> Inventory;
-        public SelectList Products;
+        public SelectList ProductCategories;
+        public SelectList Companies;
 
         private readonly IProductApplication _productApplication;
+        private readonly IProductCategoryApplication _productCategoryApplication;
+        private readonly ICompanyApplication _companyApplication;
         private readonly IInventoryApplication _inventoryApplication; 
 
-        public IndexModel(IProductApplication ProductApplication, IInventoryApplication inventoryApplication)
+        public IndexModel(IProductApplication ProductApplication, IInventoryApplication inventoryApplication,
+            IProductCategoryApplication productCategoryApplication, ICompanyApplication companyApplication)
         {
             _productApplication = ProductApplication;
             _inventoryApplication = inventoryApplication ;
+            _productCategoryApplication = productCategoryApplication;
+            _companyApplication = companyApplication;
         }
 
         public void OnGet(InventorySearchModel searchModel)
         {
-            Products = new SelectList(_productApplication.GetProducts(), "Id", "NameCompanyCode");
+            Companies = new SelectList(_companyApplication.GetCompanies(), "Id", "Name");
+            ProductCategories = new SelectList(_productCategoryApplication.GetProductCategories(), "Id", "Name");
             Inventory = _inventoryApplication.Search(searchModel);
-        }
-
-        public IActionResult OnGetCreate()
-        {
-            var command = new CreateInventory
-            {
-                Products = _productApplication.GetProducts()
-            };
-            return Partial("./Create", command);
-        }
-
-        public JsonResult OnPostCreate(CreateInventory command)
-        {
-            var result = _inventoryApplication.Create(command);
-            return new JsonResult(result);
-        }
-
-        public IActionResult OnGetEdit(long id)
-        {
-            var inventory = _inventoryApplication.GetDetails(id);
-            inventory.Products = _productApplication.GetProducts();
-            return Partial("Edit", inventory);
-        }
-
-        public JsonResult OnPostEdit(EditInventory command)
-        {
-            var result = _inventoryApplication.Edit(command);
-            return new JsonResult(result);
         }
 
         public IActionResult OnGetIncrease(long id)

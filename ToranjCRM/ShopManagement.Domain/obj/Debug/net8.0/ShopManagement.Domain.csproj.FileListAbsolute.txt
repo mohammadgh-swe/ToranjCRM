@@ -1,7 +1,9 @@
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Domain\bin\Debug\net8.0\ShopManagement.Domain.deps.json
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Domain\bin\Debug\net8.0\ShopManagement.Domain.dll
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Domain\bin\Debug\net8.0\ShopManagement.Domain.pdb
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Domain\bin\Debug\net8.0\ProjectFramework.dll
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Domain\bin\Debug\net8.0\ShopManagement.Application.Contracts.dll
+D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Domain\bin\Debug\net8.0\ProjectFramework.pdb
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Domain\bin\Debug\net8.0\ShopManagement.Application.Contracts.pdb
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Domain\obj\Debug\net8.0\ShopManagement.Domain.csproj.AssemblyReference.cache
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Domain\obj\Debug\net8.0\ShopManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
@@ -14,5 +16,3 @@ D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Domain\obj\De
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Domain\obj\Debug\net8.0\refint\ShopManagement.Domain.dll
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Domain\obj\Debug\net8.0\ShopManagement.Domain.pdb
 D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Domain\obj\Debug\net8.0\ref\ShopManagement.Domain.dll
-D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Domain\bin\Debug\net8.0\ProjectFramework.dll
-D:\++Programing++\C#\0-Projects\ToranjCRM\ToranjCRM\ShopManagement.Domain\bin\Debug\net8.0\ProjectFramework.pdb

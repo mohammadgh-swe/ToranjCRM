@@ -1,4 +1,3 @@
-using InventoryManagement.Infrastructure.Configuration;
 using ShopManagement.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +7,7 @@ builder.Services.AddRazorPages();
 
 var connectionString = builder.Configuration.GetConnectionString("TorantCRM_DB");
 ShopManagementBootstrapper.Configure(builder.Services, connectionString);
-InventoryManagementBootstrapper.Configure(builder.Services, connectionString);
+
 
 var app = builder.Build();
 

@@ -16,13 +16,7 @@ namespace ShopManagement.Application
         public OperationResult Create(CreateCustomer command)
         {
             var operaton = new OperationResult();
-            if (_customerRepository.Exists(x => x.Firstname == command.Firstname 
-                                                || x.Lastname == command.Lastname 
-                                                || x.PhoneNumber == command.PhoneNumber))
-                return operaton.Failed(ApplicationMessage.DuplicatedRecord);
-
-            var customer = new Customer(command.Firstname, command.Lastname, command.PhoneNumber,
-                command.NationalCode, command.CompanyId);
+            var customer = new Customer(command.Name, command.PhoneNumber, command.CompanyId, command.NationalCode);
             _customerRepository.Create(customer);
             _customerRepository.SaveChanges();
             return operaton.Succeed();
@@ -35,14 +29,11 @@ namespace ShopManagement.Application
             if (customer == null)
                 return operation.Failed(ApplicationMessage.RecordNotFound);
 
-            if (_customerRepository.Exists(x => x.Firstname == command.Firstname
-                                                || x.Lastname == command.Lastname
-                                                || x.PhoneNumber == command.PhoneNumber
+            if (_customerRepository.Exists(x => x.Name == command.Name && x.PhoneNumber == command.PhoneNumber
                                                 && x.Id != command.Id))
                 return operation.Failed(ApplicationMessage.DuplicatedRecord);
 
-            customer.Edit(command.Firstname, command.Lastname, command.PhoneNumber,
-                command.NationalCode, command.CompanyId);
+            customer.Edit(command.Name, command.PhoneNumber, command.NationalCode, command.CompanyId, command.operatorName);
             _customerRepository.SaveChanges();
             return operation.Succeed();
         }

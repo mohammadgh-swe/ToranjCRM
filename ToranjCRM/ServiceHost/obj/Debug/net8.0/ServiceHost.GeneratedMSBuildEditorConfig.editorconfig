@@ -30,16 +30,8 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cUGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/++Programing++/C\#/0-Projects/ToranjCRM/ToranjCRM/ServiceHost/Areas/Administration/Pages/Inventory/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cUGFnZXNcSW52ZW50b3J5XENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/++Programing++/C\#/0-Projects/ToranjCRM/ToranjCRM/ServiceHost/Areas/Administration/Pages/Inventory/Decrease.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cUGFnZXNcSW52ZW50b3J5XERlY3JlYXNlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/++Programing++/C\#/0-Projects/ToranjCRM/ToranjCRM/ServiceHost/Areas/Administration/Pages/Inventory/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cUGFnZXNcSW52ZW50b3J5XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/++Programing++/C\#/0-Projects/ToranjCRM/ToranjCRM/ServiceHost/Areas/Administration/Pages/Inventory/Increase.cshtml]

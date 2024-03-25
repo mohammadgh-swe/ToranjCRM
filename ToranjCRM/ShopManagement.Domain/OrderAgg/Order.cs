@@ -1,4 +1,6 @@
 ﻿using ProjectFramework.Domain;
+using ShopManagement.Domain.CustomerAgg;
+using ShopManagement.Domain.OrderDetailsAgg;
 
 namespace ShopManagement.Domain.OrderAgg
 {
@@ -11,14 +13,48 @@ namespace ShopManagement.Domain.OrderAgg
         public DateTime EstimatedDeliveryDate { get; private set; }
         public DateTime DeliveredDate { get; private set; }
         public double Deposit { get; private set; }
-        public double TotalPrice { get; private set; }
         public double FinallyPrice { get; private set; }
         public string Description { get; set; }
-        public bool Finally { get; private set; }
 
-        //public long CustomerId { get; set; }
-        //public long CompanyId { get; set; }
+        public long CustomerId { get; set; }
+        public Customer Customer { get; set; }
 
-        //public List<OrderDetail> OrderDetail { get; set; }
+        public List<OrderDetail> OrderDetails { get; set; }
+
+        public Order()
+        {
+            OrderDetails = new List<OrderDetail>();
+        }
+
+        public Order(string code, string orderStatus, double discount,
+            float discountRate, DateTime estimatedDeliveryDate,
+            DateTime deliveredDate, double deposit, double finallyPrice,
+            string description, long customerId)
+        {
+            Code = code;
+            OrderStatus = orderStatus;
+            Discount = discount;
+            DiscountRate = discountRate;
+            EstimatedDeliveryDate = estimatedDeliveryDate;
+            DeliveredDate = deliveredDate;
+            Deposit = deposit;
+            FinallyPrice = finallyPrice;
+            Description = description;
+            CustomerId = customerId;
+        }
+
+        public void Edit(string orderStatus, double discount, float discountRate,
+            DateTime estimatedDeliveryDate, DateTime deliveredDate, double deposit,
+            double finallyPrice, string description)
+        {
+            OrderStatus = orderStatus;
+            Discount = discount;
+            DiscountRate = discountRate;
+            EstimatedDeliveryDate = estimatedDeliveryDate;
+            DeliveredDate = deliveredDate;
+            Deposit = deposit;
+            FinallyPrice = finallyPrice;
+            Description = description;
+        }
     }
 }

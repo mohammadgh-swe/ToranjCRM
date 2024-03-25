@@ -1,4 +1,5 @@
 ﻿using ProjectFramework.Application;
+using ShopManagement.Application.Contracts.Inventory;
 using ShopManagement.Application.Contracts.Product;
 using ShopManagement.Domain.ProductAgg;
 
@@ -6,27 +7,38 @@ namespace ShopManagement.Application;
 
 public class ProductApplication : IProductApplication
 {
-
+    private readonly IInventoryApplication _inventoryApplication;
     private readonly IProductRepository _productRepository;
 
-    public ProductApplication(IProductRepository productRepository)
+    public ProductApplication(IProductRepository productRepository, IInventoryApplication inventoryApplication)
     {
         _productRepository = productRepository;
+        _inventoryApplication = inventoryApplication;
     }
 
 
     public OperationResult Create(CreateProduct command)
     {
         var operation = new OperationResult();
-        if (_productRepository.Exists(p => p.Name == command.Name))
+        if (_productRepository.Exists(p => p.Name == command.Name && p.CompanyId == command.CompanyId))
             return operation.Failed(ApplicationMessage.DuplicatedRecord);
 
         var slug = command.Slug.Slugify();
 
         var product = new Product(command.Name, command.Code, command.ShortDescription,
-            command.Description, command.Size, command.Picture, slug, command.CategoryId, command.CompanyId);
+            command.Description, command.Size, command.UnitPrice ,command.Picture, slug, command.CategoryId, command.CompanyId);
         _productRepository.Create(product);
         _productRepository.SaveChanges();
+        //Create inventory of product
+        var inventory = new CreateInventory
+        {
+            ProductId = product.Id,
+            CreationDate = product.CreateAt
+
+        };
+        _inventoryApplication.Create(inventory);
+
+
         return operation.Succeed();
     }
 
@@ -42,7 +54,7 @@ public class ProductApplication : IProductApplication
         var slug = command.Slug.Slugify();
 
         product.Edit(command.Name, command.Code, command.ShortDescription,
-            command.Description, command.Size, command.Picture, slug, command.CategoryId, command.CompanyId);
+            command.Description, command.Size, command.UnitPrice, command.Picture, slug, command.CategoryId, command.CompanyId);
         _productRepository.SaveChanges();
         return operation.Succeed();
     }
@@ -50,11 +62,6 @@ public class ProductApplication : IProductApplication
     public EditProduct GetDetails(long id)
     {
         return _productRepository.GetDetails(id);
-    }
-
-    public List<ProductViewModel> GetProducts()
-    {
-        return _productRepository.GetProducts();
     }
 
     public List<ProductViewModel> Search(ProductSearchModel searchModel)
