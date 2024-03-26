@@ -15,9 +15,9 @@ namespace ShopManagement.Infrastructure.EFCore.Mapping
             builder.Property(x => x.PhoneNumber).HasMaxLength(20).IsRequired();
             builder.Property(x => x.NationalCode).HasMaxLength(10).IsRequired(false);
 
-            builder.HasOne(x => x.Company)
-                .WithMany(x => x.Customers)
-                .HasForeignKey(x => x.CompanyId);
+            //builder.HasOne(x => x.Company)
+            //    .WithMany(x => x.Customers)
+            //    .HasForeignKey(x => x.CompanyId);
 
             builder.HasMany(x => x.Orders)
                 .WithOne(x => x.Customer)

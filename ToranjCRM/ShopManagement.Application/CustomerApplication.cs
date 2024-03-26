@@ -16,7 +16,7 @@ namespace ShopManagement.Application
         public OperationResult Create(CreateCustomer command)
         {
             var operaton = new OperationResult();
-            var customer = new Customer(command.Name, command.PhoneNumber, command.CompanyId, command.NationalCode);
+            var customer = new Customer(command.Name, command.PhoneNumber, command.NationalCode);
             _customerRepository.Create(customer);
             _customerRepository.SaveChanges();
             return operaton.Succeed();
@@ -33,7 +33,7 @@ namespace ShopManagement.Application
                                                 && x.Id != command.Id))
                 return operation.Failed(ApplicationMessage.DuplicatedRecord);
 
-            customer.Edit(command.Name, command.PhoneNumber, command.NationalCode, command.CompanyId, command.operatorName);
+            customer.Edit(command.Name, command.PhoneNumber, command.NationalCode, command.operatorName);
             _customerRepository.SaveChanges();
             return operation.Succeed();
         }

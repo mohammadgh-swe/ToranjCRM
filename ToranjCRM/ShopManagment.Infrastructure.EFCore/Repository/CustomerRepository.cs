@@ -23,7 +23,6 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 
                 PhoneNumber = x.PhoneNumber,
                 NationalCode = x.NationalCode,
-                CompanyId = x.CompanyId
 
             }).FirstOrDefault(x => x.Id == id);
         }
@@ -35,9 +34,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 Id = x.Id,
                 Name = x.Name,
                 PhoneNumber = x.PhoneNumber,
-                NationalCode = x.NationalCode,
-                CompanyId = x.CompanyId,
-                Company = x.Company.ToString()
+                NationalCode = x.NationalCode
             });
 
             //if (!string.IsNullOrWhiteSpace(searchModel.Name))

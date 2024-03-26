@@ -1,9 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShopManagement.Application.Contracts.Company;
-using ShopManagement.Application.Contracts.ProductCategory;
 
-namespace ServiceHost.Areas.Administration.Pages.Shop.Companies
+namespace ServiceHost.Areas.Administration.Pages.Companies
 {
     public class IndexModel : PageModel
     {

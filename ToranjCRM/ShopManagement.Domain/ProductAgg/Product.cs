@@ -1,7 +1,7 @@
 ﻿using ProjectFramework.Domain;
 using ShopManagement.Domain.CompanyAgg;
 using ShopManagement.Domain.InventoryAgg;
-using ShopManagement.Domain.OrderDetailsAgg;
+using ShopManagement.Domain.OrderDetailAgg;
 using ShopManagement.Domain.ProductCategoryAgg;
 using ShopManagement.Domain.ProductPictureAgg;
 

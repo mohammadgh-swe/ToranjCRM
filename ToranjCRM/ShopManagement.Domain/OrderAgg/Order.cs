@@ -1,6 +1,6 @@
 ﻿using ProjectFramework.Domain;
 using ShopManagement.Domain.CustomerAgg;
-using ShopManagement.Domain.OrderDetailsAgg;
+using ShopManagement.Domain.OrderDetailAgg;
 
 namespace ShopManagement.Domain.OrderAgg
 {

@@ -12,8 +12,8 @@ using ShopManagement.Infrastructure.EFCore;
 namespace ShopManagement.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    [Migration("20240325181542_OrderAndCustomerAdded")]
-    partial class OrderAndCustomerAdded
+    [Migration("20240326111923_InitialDatabase")]
+    partial class InitialDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -94,9 +94,6 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<long>("CompanyId")
-                        .HasColumnType("bigint");
-
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime2");
 
@@ -129,8 +126,6 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CompanyId");
 
                     b.ToTable("Customers", (string)null);
                 });
@@ -246,13 +241,13 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                     b.ToTable("Orders", (string)null);
                 });
 
-            modelBuilder.Entity("ShopManagement.Domain.OrderDetailsAgg.OrderDetail", b =>
+            modelBuilder.Entity("ShopManagement.Domain.OrderDetailAgg.OrderDetail", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<long>("OrderId")
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime2");
@@ -261,11 +256,11 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long>("Id")
+                        .HasColumnType("bigint");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
-
-                    b.Property<long>("OrderId")
-                        .HasColumnType("bigint");
 
                     b.Property<long>("ProductId")
                         .HasColumnType("bigint");
@@ -277,13 +272,11 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrderId");
+                    b.HasKey("OrderId");
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderDetail");
+                    b.ToTable("OrderDetails", (string)null);
                 });
 
             modelBuilder.Entity("ShopManagement.Domain.ProductAgg.Product", b =>
@@ -452,17 +445,6 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                     b.ToTable("ProductPictures", (string)null);
                 });
 
-            modelBuilder.Entity("ShopManagement.Domain.CustomerAgg.Customer", b =>
-                {
-                    b.HasOne("ShopManagement.Domain.CompanyAgg.Company", "Company")
-                        .WithMany("Customers")
-                        .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Company");
-                });
-
             modelBuilder.Entity("ShopManagement.Domain.InventoryAgg.Inventory", b =>
                 {
                     b.HasOne("ShopManagement.Domain.ProductAgg.Product", "Product")
@@ -533,7 +515,7 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("ShopManagement.Domain.OrderDetailsAgg.OrderDetail", b =>
+            modelBuilder.Entity("ShopManagement.Domain.OrderDetailAgg.OrderDetail", b =>
                 {
                     b.HasOne("ShopManagement.Domain.OrderAgg.Order", "Order")
                         .WithMany("OrderDetails")
@@ -584,8 +566,6 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
 
             modelBuilder.Entity("ShopManagement.Domain.CompanyAgg.Company", b =>
                 {
-                    b.Navigation("Customers");
-
                     b.Navigation("Products");
                 });
 

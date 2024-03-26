@@ -10,8 +10,6 @@ namespace ShopManagement.Domain.CustomerAgg
         public string PhoneNumber { get; private set; }
         public string NationalCode { get; private set; }
 
-        public long CompanyId { get; private set; }
-        public Company Company { get; private set; }
 
         public List<Order> Orders { get; set; }
 
@@ -20,20 +18,18 @@ namespace ShopManagement.Domain.CustomerAgg
             Orders = new List<Order>();
         }
 
-        public Customer(string name, string phoneNumber, long companyId, string nationalCode = null)
+        public Customer(string name, string phoneNumber, string nationalCode = null)
         {
             Name = name;
             PhoneNumber = phoneNumber;
             NationalCode = nationalCode;
-            CompanyId = companyId;
         }
 
-        public void Edit(string name, string phoneNumber, string nationalCode, long companyId, string operatorName = " ")
+        public void Edit(string name, string phoneNumber, string nationalCode, string operatorName = " ")
         {
             Name = name;
             PhoneNumber = phoneNumber;
             NationalCode = nationalCode;
-            CompanyId = companyId;
             UpdatedBy = operatorName;
             UpdateAt = DateTime.Now;
         }

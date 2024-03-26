@@ -3,6 +3,7 @@ using ShopManagement.Domain.CompanyAgg;
 using ShopManagement.Domain.CustomerAgg;
 using ShopManagement.Domain.InventoryAgg;
 using ShopManagement.Domain.OrderAgg;
+using ShopManagement.Domain.OrderDetailAgg;
 using ShopManagement.Domain.ProductAgg;
 using ShopManagement.Domain.ProductCategoryAgg;
 using ShopManagement.Domain.ProductPictureAgg;
@@ -19,6 +20,7 @@ namespace ShopManagement.Infrastructure.EFCore
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Inventory> Inventory { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
 
         public ShopContext(DbContextOptions<ShopContext> options) : base(options)

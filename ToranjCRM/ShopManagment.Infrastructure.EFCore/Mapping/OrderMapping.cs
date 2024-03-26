@@ -29,6 +29,9 @@ namespace ShopManagement.Infrastructure.EFCore.Mapping
                 .WithMany(x => x.Orders)
                 .HasForeignKey(x => x.CustomerId);
 
+            builder.HasMany(x => x.OrderDetails)
+                .WithOne(x => x.Order)
+                .HasForeignKey(x => x.OrderId);
         }
     }
 }

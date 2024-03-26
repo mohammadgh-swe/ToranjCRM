@@ -15,12 +15,10 @@ namespace ShopManagement.Domain.CompanyAgg
         public string Slug { get; private set; }
 
         public List<Product> Products { get; private set; }
-        public List<Customer> Customers { get; set; }
 
         public Company()
         {
             Products = new List<Product>();
-            Customers = new List<Customer>();
         }
         public Company(string name, string address, string agentName, string agentPhoneNubmber, string phoneNumber, string description, string slug)
         {

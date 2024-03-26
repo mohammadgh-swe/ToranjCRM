@@ -49,7 +49,6 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 CustomerName = x.Customer.Name,
                 CustomerPhoneNumber = x.Customer.PhoneNumber,
                 CustomerId = x.CustomerId,
-                CompanyId = x.Customer.CompanyId
             });
 
 

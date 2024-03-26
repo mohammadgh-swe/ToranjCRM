@@ -11,7 +11,5 @@ namespace ShopManagement.Application.Contracts.Customer
         public string PhoneNumber { get; set; }
         public string? NationalCode { get; set; }
         public string operatorName { get; set; }
-        [Range(1, long.MaxValue, ErrorMessage = ValidationMessage.IsRequired)]
-        public long CompanyId { get; set; }
     }
 }
